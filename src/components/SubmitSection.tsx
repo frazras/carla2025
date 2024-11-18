@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, FileText, Presentation, Image } from 'lucide-react';
 import supportBorder from '../assets/images/carla25_img-support02-min.png';
+import supportDecor from '../assets/images/carla25_img-support01-min.png';
 
 const categories = [
   { 
@@ -27,8 +28,18 @@ const categories = [
 
 export default function SubmitSection() {
   return (
-    <div className="bg-brand-gray text-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="bg-brand-gray text-white py-20 relative overflow-hidden">
+      <img 
+        src={supportDecor} 
+        alt="" 
+        className="hidden 2xl:block absolute left-0 top-1/2 -translate-y-1/2 h-64"
+      />
+      <img 
+        src={supportDecor} 
+        alt="" 
+        className="hidden 2xl:block absolute right-0 top-1/2 -translate-y-1/2 h-64 scale-x-[-1]"
+      />
+      <div className="max-w-7xl mx-auto px-6 relative">
         <div className="mb-16 flex items-baseline">
           <h2 className="text-5xl font-bold">Submit</h2>
           <span className="mx-8 text-4xl font-light italic text-brand-yellow">Coming Soon</span>

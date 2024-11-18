@@ -5,6 +5,7 @@ import About from './components/About';
 import LocationInfo from './components/LocationInfo';
 import SubmitSection from './components/SubmitSection';
 import Registration from './components/Registration';
+import Map from './components/Map';
 import Footer from './components/Footer';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <LocationInfo />
         <SubmitSection />
         <Registration />
+        <Map />
       </main>
       <Footer />
     </div>
