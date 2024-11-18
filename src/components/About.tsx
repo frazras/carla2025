@@ -4,7 +4,7 @@ import bannerImage from '../assets/images/carla25_bn-home-min.png';
 export default function About() {
   return (
     <div 
-      className="py-20 bg-cover bg-center bg-fixed relative"
+      className="py-20 bg- bg-center bg-fixed relative"
       style={{
         backgroundImage: `url(${bannerImage})`,
       }}
