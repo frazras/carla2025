@@ -7,6 +7,7 @@ import SubmitSection from './components/SubmitSection';
 import Registration from './components/Registration';
 import Map from './components/Map';
 import Footer from './components/Footer';
+import SubscribePopup from './components/SubscribePopup';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Map />
       </main>
       <Footer />
+      <SubscribePopup />
     </div>
   );
 }
