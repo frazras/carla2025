@@ -1,20 +1,25 @@
 import React from 'react';
-import { Bird } from 'lucide-react';
+import headerImage from '../assets/images/carla25_img-header-min.png';
+import headerLogo from '../assets/images/carla25_logotiype-header-min.png';
 
 export default function Hero() {
   return (
-    <div className="relative bg-black text-white pt-20">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="flex items-center justify-center mb-8">
-          <Bird className="w-16 h-16 text-green-400" />
-          <div className="ml-4">
-            <h1 className="text-4xl font-bold">CARLA'25</h1>
-            <p className="text-xl">SEPTEMBER 22 - 26</p>
-            <p className="text-xl">KINGSTON, JAMAICA</p>
+    <div className="relative bg-brand-black text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="relative">
+          <div className="flex items-center justify-center">
+            <img src={headerLogo} alt="CARLA'25 Logo" className="h-52 py-1" />
+          </div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <img 
+              src={headerImage} 
+              alt="CARLA'25 Header" 
+              className="h-20 object-cover"
+            />
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-green-500"></div>
+      <div className="w-full h-20 bg-brand-green" />
     </div>
   );
 }
