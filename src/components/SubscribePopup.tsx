@@ -4,6 +4,7 @@ export default function SubscribePopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState('');
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,20 +13,26 @@ export default function SubscribePopup() {
       const windowHeight = window.innerHeight;
       const halfwayPoint = (pageHeight - windowHeight) / 2;
 
-      if (scrollPosition > halfwayPoint && !isSubmitted) {
+      if (scrollPosition > halfwayPoint && !isSubmitted && !isDismissed) {
         setIsVisible(true);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isSubmitted]);
+  }, [isSubmitted, isDismissed]);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setIsDismissed(true);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically handle the email submission
     setIsSubmitted(true);
     setIsVisible(false);
+    setIsDismissed(true);
   };
 
   if (!isVisible) return null;
@@ -34,7 +41,7 @@ export default function SubscribePopup() {
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-xl p-8 max-w-md w-full relative">
         <button 
-          onClick={() => setIsVisible(false)}
+          onClick={handleClose}
           className="absolute top-4 right-4 text-brand-gray hover:text-brand-black"
         >
           ✕
