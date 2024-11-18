@@ -12,7 +12,7 @@ export default function Footer() {
       <img 
         src={footerBg}
         alt=""
-        className="w-full h-[300px] object-cover"
+        className="w-full h-[400px] object-cover"
       />
       <div className="absolute inset-0">
         <div className="max-w-7xl mx-auto px-6 py-12">
